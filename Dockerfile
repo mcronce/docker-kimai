@@ -6,7 +6,7 @@ EXPOSE 80
 ARG DEBIAN_FRONTEND=noninteractive
 RUN \
 	apt-get update && apt-get install -y --no-install-recommends unzip && \
-	rm -rf /var/lib/apt/lists/*
+	rm -rf /var/lib/apt
 
 ARG KIMAI_VERSION=1.1.0
 ARG KIMAI_SHA256=3484b3f30f95b5866cf3dfa1e52bbff5ef85f19da9f9620f6458a26b8cc30e81
