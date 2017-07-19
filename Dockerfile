@@ -1,5 +1,6 @@
+# Based on Fabian Köster's container (indeed, this repo forked from https://github.com/fkoester/docker-kimai)
 FROM php:5-apache
-MAINTAINER Fabian Köster <mail@fabian-koester.com>
+MAINTAINER Mike Cronce <mike@quadra-tec.net>
 
 EXPOSE 80
 
