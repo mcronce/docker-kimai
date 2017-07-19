@@ -1,0 +1,15 @@
+#!/bin/bash -e
+
+volume_config_dir="/config";
+internal_config_dir="/var/www/html/includes";
+
+pushd "${volume_config_dir}";
+find . -type f | sed 's:^\./::' | while read file; do
+	remote_file="${internal_config_dir}/${file}";
+	remote_dir="$(dirname "${remote_file}")";
+	mkdir -pv "${remote_dir}";
+	ln -svf "${volume_config_dir}/${file}" "${remote_file}";
+done;
+
+docker-php-entrypoint;
+
