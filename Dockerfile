@@ -19,7 +19,7 @@ RUN \
 	chown -R www-data:www-data /var/www/html/ && \
 	rm -vf *.zip
 
-RUN docker-php-ext-install mysqli
+RUN docker-php-ext-install "-j$(nproc)" mysqli
 
 RUN mkdir /config
 ADD entrypoint /
