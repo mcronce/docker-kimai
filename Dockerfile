@@ -19,3 +19,8 @@ RUN curl -L -o kimai.zip https://github.com/kimai/kimai/releases/download/${KIMA
   && rm *.zip
 
 RUN docker-php-ext-install mysqli
+
+RUN mkdir /config
+ADD entrypoint /
+ENTRYPOINT ["/entrypoint"]
+
