@@ -11,5 +11,5 @@ find . -type f | sed 's:^\./::' | while read file; do
 	ln -svf "${volume_config_dir}/${file}" "${remote_file}";
 done;
 
-docker-php-entrypoint;
+docker-php-entrypoint apache2-foreground;
 
